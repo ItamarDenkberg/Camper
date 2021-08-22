@@ -1,0 +1,6 @@
+
+|File|[Lines (% total)](https://github.com/ItamarDenkberg/Camper/tree/main/Statistics/LinesDescending.md/)|[Code Lines](https://github.com/ItamarDenkberg/Camper/tree/main/Statistics/CodeDescending.md/)|[% Code](https://github.com/ItamarDenkberg/Camper/tree/main/Statistics/ProportionCodeDescending.md/)|[Comment Lines](https://github.com/ItamarDenkberg/Camper/tree/main/Statistics/CommentsDescending.md/)|[% Comment](https://github.com/ItamarDenkberg/Camper/tree/main/Statistics/ProportionCommentsAscending.md/)|[Blank Lines](https://github.com/ItamarDenkberg/Camper/tree/main/Statistics/BlanksDescending.md/)|[% Blank](https://github.com/ItamarDenkberg/Camper/tree/main/Statistics/ProportionBlanksDescending.md/)|
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|[ClientEventBusSubscriber.java](https://github.com/ItamarDenkberg/Camper/tree/main/./src/main/java/io/github/itamardenkberg/camper/core/util/ClientEventBusSubscriber.java)|17 (37.8%)|13|76.5%|0|0.0%|4|23.5%|
+|[Camper.java](https://github.com/ItamarDenkberg/Camper/tree/main/./src/main/java/io/github/itamardenkberg/camper/Camper.java)|28 (62.2%)|20|71.4%|0|0.0%|8|28.6%|
+|Total (2)|45|33|73.3%|0| 0.0%|12|26.7%|

@@ -1,0 +1,4 @@
+File,Lines (% total),Code Lines,% Code,Comment Lines,% Comment,Blank Lines,% Blank
+./src/main/java/io/github/itamardenkberg/camper/Camper.java,28 (62.2%),20,71.4%,0,0.0%,8,28.6%
+./src/main/java/io/github/itamardenkberg/camper/core/util/ClientEventBusSubscriber.java,17 (37.8%),13,76.5%,0,0.0%,4,23.5%
+Total,45,33,0.7333333333333333,0,0.0,12,0.26666666666666666
