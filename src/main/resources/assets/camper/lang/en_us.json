@@ -1,5 +1,6 @@
 {
     "itemGroup.camper": "Camper",
     "item.camper.hazelnut": "Hazelnut",
-    "block.camper.hazel_leaves": "Hazel Leaves"
+    "block.camper.hazel_leaves": "Hazel Leaves",
+    "entity.camper.squirrel": "Squirrel"
 }
