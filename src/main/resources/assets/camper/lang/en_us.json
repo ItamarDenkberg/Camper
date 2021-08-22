@@ -1,6 +1,10 @@
 {
     "itemGroup.camper": "Camper",
+    
     "item.camper.hazelnut": "Hazelnut",
+    "item.camper.squirrel_spawn_egg": "Squirrel Spawn Egg",
+    
     "block.camper.hazel_leaves": "Hazel Leaves",
+    
     "entity.camper.squirrel": "Squirrel"
 }
