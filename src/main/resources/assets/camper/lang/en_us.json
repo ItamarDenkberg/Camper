@@ -1,3 +1,5 @@
 {
-
+	"itemGroup.camper": "Camper",
+	"item.camper.hazelnut": "Hazelnut",
+	"block.camper.hazel_leaves": "Hazel Leaves"
 }
