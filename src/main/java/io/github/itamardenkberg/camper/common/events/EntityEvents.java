@@ -21,12 +21,12 @@ public class EntityEvents {
 
 		if (event.getCategory().equals(Biome.Category.FOREST)) {
 			spawns.withSpawner(EntityClassification.CREATURE,
-					new MobSpawnInfo.Spawners(EntityTypesInit.SQUIRREL.get(), 8, 1, 4));
+					new MobSpawnInfo.Spawners(EntityTypesInit.SQUIRREL.get(), 11, 1, 4));
 		}
 		
 		if (event.getCategory().equals(Biome.Category.TAIGA)) {
 			spawns.withSpawner(EntityClassification.CREATURE,
-					new MobSpawnInfo.Spawners(EntityTypesInit.SQUIRREL.get(), 6, 1, 4));
+					new MobSpawnInfo.Spawners(EntityTypesInit.SQUIRREL.get(), 9, 1, 4));
 		}
 	}
 }
