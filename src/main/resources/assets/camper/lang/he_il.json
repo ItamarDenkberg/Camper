@@ -1,5 +1,13 @@
 {
     "itemGroup.camper": "Camper",
+    
     "item.camper.hazelnut": "אגוז לוז",
-    "block.camper.hazel_leaves": "עלי עץ לוז"
+    "item.camper.gelatin": "ג'לטין",
+    "item.camper.marshmallow_on_a_stick": "מרשמלו על מקל",
+    "item.camper.roasted_marshmallow_on_a_stick": "מרשמלו מבושל על מקל",
+    "item.camper.squirrel_spawn_egg": "ביצת זימון סנאי",
+    
+    "block.camper.hazel_leaves": "עלי עץ לוז",
+    
+    "entity.camper.squirrel": "סנאי"
 }

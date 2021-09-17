@@ -2,6 +2,9 @@
     "itemGroup.camper": "Camper",
     
     "item.camper.hazelnut": "Hazelnut",
+    "item.camper.gelatin": "Gelatin",
+    "item.camper.marshmallow_on_a_stick": "Marshmallow on a Stick",
+    "item.camper.roasted_marshmallow_on_a_stick": "Roasted Marshmallow on a Stick",
     "item.camper.squirrel_spawn_egg": "Squirrel Spawn Egg",
     
     "block.camper.hazel_leaves": "Hazel Leaves",
