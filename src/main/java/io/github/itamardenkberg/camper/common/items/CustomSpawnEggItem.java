@@ -42,13 +42,13 @@ public class CustomSpawnEggItem extends SpawnEggItem {
 
 	public static void initSpawnEggs() {
 		final Map<EntityType<?>, SpawnEggItem> EGGS = ObfuscationReflectionHelper.getPrivateValue(SpawnEggItem.class,
-				null, "field_195987_b");
-		
+				null, "BY_ID");
+
 		for (final SpawnEggItem item : ADD_EGGS) {
 			EGGS.put(item.getType(null), item);
 			DispenserBlock.registerDispenseBehavior(item, behavior);
 		}
-		
+
 		ADD_EGGS.clear();
 	}
 
