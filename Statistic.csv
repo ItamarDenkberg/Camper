@@ -1,14 +1,14 @@
 File,Lines (% total),Code Lines,% Code,Comment Lines,% Comment,Blank Lines,% Blank
-./src/main/java/io/github/itamardenkberg/camper/Camper.java,58 (11.8%),49,84.5%,0,0.0%,9,15.5%
-./src/main/java/io/github/itamardenkberg/camper/common/items/CustomSpawnEggItem.java,59 (12.0%),50,84.7%,0,0.0%,9,15.3%
-./src/main/java/io/github/itamardenkberg/camper/common/entities/passive/SquirrelEntity.java,69 (14.0%),59,85.5%,0,0.0%,10,14.5%
-./src/main/java/io/github/itamardenkberg/camper/common/events/EntityEvents.java,32 (6.5%),28,87.5%,0,0.0%,4,12.5%
-./src/main/java/io/github/itamardenkberg/camper/core/util/ClientEventBusSubscriber.java,20 (4.1%),17,85.0%,0,0.0%,3,15.0%
-./src/main/java/io/github/itamardenkberg/camper/core/init/EntityTypesInit.java,19 (3.9%),16,84.2%,0,0.0%,3,15.8%
-./src/main/java/io/github/itamardenkberg/camper/core/init/BlockInit.java,18 (3.7%),15,83.3%,0,0.0%,3,16.7%
-./src/main/java/io/github/itamardenkberg/camper/core/init/ItemInit.java,33 (6.7%),25,75.8%,0,0.0%,8,24.2%
+./src/main/java/io/github/itamardenkberg/camper/Camper.java,58 (11.6%),49,84.5%,0,0.0%,9,15.5%
+./src/main/java/io/github/itamardenkberg/camper/common/items/CustomSpawnEggItem.java,59 (11.8%),50,84.7%,0,0.0%,9,15.3%
+./src/main/java/io/github/itamardenkberg/camper/common/entities/passive/SquirrelEntity.java,77 (15.5%),67,87.0%,0,0.0%,10,13.0%
+./src/main/java/io/github/itamardenkberg/camper/common/events/EntityEvents.java,32 (6.4%),28,87.5%,0,0.0%,4,12.5%
+./src/main/java/io/github/itamardenkberg/camper/core/util/ClientEventBusSubscriber.java,20 (4.0%),17,85.0%,0,0.0%,3,15.0%
+./src/main/java/io/github/itamardenkberg/camper/core/init/EntityTypesInit.java,19 (3.8%),16,84.2%,0,0.0%,3,15.8%
+./src/main/java/io/github/itamardenkberg/camper/core/init/BlockInit.java,16 (3.2%),13,81.2%,0,0.0%,3,18.8%
+./src/main/java/io/github/itamardenkberg/camper/core/init/ItemInit.java,33 (6.6%),25,75.8%,0,0.0%,8,24.2%
 ./src/main/java/io/github/itamardenkberg/camper/core/init/FoodInit.java,10 (2.0%),8,80.0%,0,0.0%,2,20.0%
-./src/main/java/io/github/itamardenkberg/camper/core/init/TagInit.java,39 (7.9%),24,61.5%,9,23.1%,6,15.4%
-./src/main/java/io/github/itamardenkberg/camper/client/render/entity/SquirrelEntityRenderer.java,21 (4.3%),17,81.0%,0,0.0%,4,19.0%
-./src/main/java/io/github/itamardenkberg/camper/client/render/model/SquirrelEntityModel.java,114 (23.2%),91,79.8%,2,1.8%,21,18.4%
-Total,492,399,0.8109756097560976,11,0.022357723577235773,82,0.16666666666666666
+./src/main/java/io/github/itamardenkberg/camper/core/init/TagInit.java,39 (7.8%),24,61.5%,9,23.1%,6,15.4%
+./src/main/java/io/github/itamardenkberg/camper/client/render/entity/SquirrelEntityRenderer.java,21 (4.2%),17,81.0%,0,0.0%,4,19.0%
+./src/main/java/io/github/itamardenkberg/camper/client/render/model/SquirrelEntityModel.java,114 (22.9%),91,79.8%,2,1.8%,21,18.4%
+Total,498,405,0.8132530120481928,11,0.02208835341365462,82,0.1646586345381526
