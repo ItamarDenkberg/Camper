@@ -1,16 +1,16 @@
 
 |File|[Lines (% total)](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/Statistics/LinesDescending.md/)|[Code Lines](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/Statistics/CodeDescending.md/)|[% Code](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/Statistics/ProportionCodeAscending.md/)|[Comment Lines](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/Statistics/CommentsDescending.md/)|[% Comment](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/Statistics/ProportionCommentsDescending.md/)|[Blank Lines](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/Statistics/BlanksDescending.md/)|[% Blank](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/Statistics/ProportionBlanksDescending.md/)|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-|[EntityEvents.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/common/events/EntityEvents.java)|32 (6.4%)|28|87.5%|0|0.0%|4|12.5%|
-|[SquirrelEntity.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/common/entities/passive/SquirrelEntity.java)|77 (15.5%)|67|87.0%|0|0.0%|10|13.0%|
-|[ClientEventBusSubscriber.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/util/ClientEventBusSubscriber.java)|20 (4.0%)|17|85.0%|0|0.0%|3|15.0%|
-|[CustomSpawnEggItem.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/common/items/CustomSpawnEggItem.java)|59 (11.8%)|50|84.7%|0|0.0%|9|15.3%|
-|[Camper.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/Camper.java)|58 (11.6%)|49|84.5%|0|0.0%|9|15.5%|
-|[EntityTypesInit.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/init/EntityTypesInit.java)|19 (3.8%)|16|84.2%|0|0.0%|3|15.8%|
-|[BlockInit.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/init/BlockInit.java)|16 (3.2%)|13|81.2%|0|0.0%|3|18.8%|
-|[SquirrelEntityRenderer.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/client/render/entity/SquirrelEntityRenderer.java)|21 (4.2%)|17|81.0%|0|0.0%|4|19.0%|
-|[FoodInit.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/init/FoodInit.java)|10 (2.0%)|8|80.0%|0|0.0%|2|20.0%|
-|[SquirrelEntityModel.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/client/render/model/SquirrelEntityModel.java)|114 (22.9%)|91|79.8%|2|1.8%|21|18.4%|
-|[ItemInit.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/init/ItemInit.java)|33 (6.6%)|25|75.8%|0|0.0%|8|24.2%|
-|[TagInit.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/init/TagInit.java)|39 (7.8%)|24|61.5%|9|23.1%|6|15.4%|
-|Total (12)|498|405|81.3%|11| 2.2%|82|16.5%|
+|[SquirrelEntity.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/common/entities/passive/SquirrelEntity.java)|151 (24.8%)|135|89.4%|0|0.0%|16|10.6%|
+|[EntityEvents.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/common/events/EntityEvents.java)|32 (5.3%)|28|87.5%|0|0.0%|4|12.5%|
+|[CustomSpawnEggItem.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/common/items/CustomSpawnEggItem.java)|59 (9.7%)|50|84.7%|0|0.0%|9|15.3%|
+|[EntityTypesInit.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/init/EntityTypesInit.java)|19 (3.1%)|16|84.2%|0|0.0%|3|15.8%|
+|[SquirrelEntityRenderer.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/client/render/entity/SquirrelEntityRenderer.java)|24 (3.9%)|20|83.3%|0|0.0%|4|16.7%|
+|[Camper.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/Camper.java)|53 (8.7%)|44|83.0%|0|0.0%|9|17.0%|
+|[BlockInit.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/init/BlockInit.java)|16 (2.6%)|13|81.2%|0|0.0%|3|18.8%|
+|[SquirrelEntityModel.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/client/render/model/SquirrelEntityModel.java)|137 (22.5%)|111|81.0%|4|2.9%|22|16.1%|
+|[FoodInit.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/init/FoodInit.java)|10 (1.6%)|8|80.0%|0|0.0%|2|20.0%|
+|[ClientEventBusSubscriber.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/util/ClientEventBusSubscriber.java)|35 (5.8%)|28|80.0%|0|0.0%|7|20.0%|
+|[ItemInit.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/init/ItemInit.java)|33 (5.4%)|25|75.8%|0|0.0%|8|24.2%|
+|[TagInit.java](https://github.com/ItamarDenkberg/Camper/tree/1.17.1/./src/main/java/io/github/itamardenkberg/camper/core/init/TagInit.java)|39 (6.4%)|24|61.5%|9|23.1%|6|15.4%|
+|Total (12)|608|502|82.6%|13| 2.1%|93|15.3%|
