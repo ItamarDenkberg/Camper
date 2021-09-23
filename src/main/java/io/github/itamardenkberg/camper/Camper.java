@@ -8,17 +8,15 @@ import io.github.itamardenkberg.camper.common.items.CustomSpawnEggItem;
 import io.github.itamardenkberg.camper.core.init.BlockInit;
 import io.github.itamardenkberg.camper.core.init.EntityTypesInit;
 import io.github.itamardenkberg.camper.core.init.ItemInit;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Camper.MOD_ID)
@@ -28,7 +26,7 @@ public class Camper {
 
 	public Camper() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		bus.addListener(this::commonSetup);
+		bus.addListener(this::addAttributes);
 
 		EntityTypesInit.ENTITY_TYPES.register(bus);
 		ItemInit.ITEMS.register(bus);
@@ -42,16 +40,13 @@ public class Camper {
 		CustomSpawnEggItem.initSpawnEggs();
 	}
 
-	@SuppressWarnings("deprecation")
-	private void commonSetup(final FMLCommonSetupEvent event) {
-		DeferredWorkQueue.runLater(() -> {
-			GlobalEntityTypeAttributes.put(EntityTypesInit.SQUIRREL.get(), SquirrelEntity.setAttributes().create());
-		});
+	private void addAttributes(final EntityAttributeCreationEvent event) {
+		event.put(EntityTypesInit.SQUIRREL.get(), SquirrelEntity.setAttributes().build());
 	}
 
-	public static final ItemGroup TAB_CAMPER = new ItemGroup("camper") {
+	public static final CreativeModeTab TAB_CAMPER = new CreativeModeTab("camper") {
 		@Override
-		public ItemStack createIcon() {
+		public ItemStack makeIcon() {
 			return new ItemStack(ItemInit.HAZELNUT.get());
 		}
 	};

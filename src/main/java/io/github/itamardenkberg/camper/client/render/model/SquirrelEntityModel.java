@@ -1,114 +1,137 @@
 package io.github.itamardenkberg.camper.client.render.model;
 
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import io.github.itamardenkberg.camper.common.entities.passive.SquirrelEntity;
-import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
+import net.minecraft.client.model.geom.builders.CubeListBuilder;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.model.geom.builders.MeshDefinition;
+import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.resources.ResourceLocation;
 
-// Made with Blockbench 3.9.2
-// Exported for Minecraft version 1.15 - 1.16 with MCP mappings
+//Made with Blockbench 4.0.0-beta.0
+//Exported for Minecraft version 1.17 with Mojang mappings
 
-public class SquirrelEntityModel<T extends SquirrelEntity> extends EntityModel<SquirrelEntity> {
-	private final ModelRenderer head;
-	private final ModelRenderer nose;
-	private final ModelRenderer left_ear;
-	private final ModelRenderer right_ear;
-	private final ModelRenderer body;
-	private final ModelRenderer left_arm;
-	private final ModelRenderer right_arm;
-	private final ModelRenderer left_thigh;
-	private final ModelRenderer right_thigh;
-	private final ModelRenderer left_foot;
-	private final ModelRenderer right_foot;
-	private final ModelRenderer tail;
+public class SquirrelEntityModel<T extends SquirrelEntity> extends EntityModel<T> {
+	// This layer location should be baked with EntityRendererProvider.Context in
+	// the entity renderer and passed into this model's constructor
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
+			new ResourceLocation("camper", "squirrel"), "main");
+	private final ModelPart head;
+	private final ModelPart nose;
+	private final ModelPart left_ear;
+	private final ModelPart right_ear;
+	private final ModelPart body;
+	private final ModelPart left_arm;
+	private final ModelPart right_arm;
+	private final ModelPart left_thigh;
+	private final ModelPart right_thigh;
+	private final ModelPart left_foot;
+	private final ModelPart right_foot;
+	private final ModelPart tail;
 
-	public SquirrelEntityModel() {
-		textureWidth = 64;
-		textureHeight = 64;
+	public SquirrelEntityModel(ModelPart root) {
+		this.head = root.getChild("head");
+		this.nose = root.getChild("nose");
+		this.left_ear = root.getChild("left_ear");
+		this.right_ear = root.getChild("right_ear");
+		this.body = root.getChild("body");
+		this.left_arm = root.getChild("left_arm");
+		this.right_arm = root.getChild("right_arm");
+		this.left_thigh = root.getChild("left_thigh");
+		this.right_thigh = root.getChild("right_thigh");
+		this.left_foot = root.getChild("left_foot");
+		this.right_foot = root.getChild("right_foot");
+		this.tail = root.getChild("tail");
+	}
 
-		head = new ModelRenderer(this);
-		head.setRotationPoint(0.0F, 16.5F, -3.0F);
-		head.setTextureOffset(22, 0).addBox(-2.5F, -3.5F, -5.0F, 5.0F, 4.0F, 4.0F, 0.0F, false);
+	@SuppressWarnings("unused")
+	public static LayerDefinition createBodyLayer() {
+		MeshDefinition meshdefinition = new MeshDefinition();
+		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		nose = new ModelRenderer(this);
-		nose.setRotationPoint(0.0F, 16.5F, -3.0F);
-		nose.setTextureOffset(0, 7).addBox(-1.5F, -1.5F, -6.0F, 3.0F, 2.0F, 1.0F, 0.0F, false);
+		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(22, 0).addBox(
+				-2.5F, -3.5F, -5.0F, 5.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 16.5F, -3.0F));
 
-		left_ear = new ModelRenderer(this);
-		left_ear.setRotationPoint(0.0F, 16.5F, -3.0F);
-		setRotationAngle(left_ear, 0.0F, 0.2618F, 0.0F);
-		left_ear.setTextureOffset(11, 15).addBox(0.7588F, -5.5F, -1.9659F, 2.0F, 3.0F, 1.0F, 0.0F, false);
+		PartDefinition nose = partdefinition.addOrReplaceChild("nose", CubeListBuilder.create().texOffs(0, 7).addBox(
+				-1.5F, -1.5F, -6.0F, 3.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 16.5F, -3.0F));
 
-		right_ear = new ModelRenderer(this);
-		right_ear.setRotationPoint(0.0F, 16.5F, -3.0F);
-		setRotationAngle(right_ear, 0.0F, -0.2618F, 0.0F);
-		right_ear.setTextureOffset(0, 15).addBox(-2.7588F, -5.5F, -1.9659F, 2.0F, 3.0F, 1.0F, 0.0F, false);
+		PartDefinition left_ear = partdefinition.addOrReplaceChild("left_ear",
+				CubeListBuilder.create().texOffs(11, 15).addBox(0.7588F, -5.5F, -1.9659F, 2.0F, 3.0F, 1.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.0F, 16.5F, -3.0F, 0.0F, 0.2618F, 0.0F));
 
-		body = new ModelRenderer(this);
-		body.setRotationPoint(0.0F, 16.0F, 7.0F);
-		setRotationAngle(body, -0.1309F, 0.0F, 0.0F);
-		body.setTextureOffset(0, 0).addBox(-3.0F, 0.2268F, -11.4608F, 6.0F, 5.0F, 10.0F, 0.0F, false);
+		PartDefinition right_ear = partdefinition.addOrReplaceChild("right_ear",
+				CubeListBuilder.create().texOffs(0, 15).addBox(-2.7588F, -5.5F, -1.9659F, 2.0F, 3.0F, 1.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.0F, 16.5F, -3.0F, 0.0F, -0.2618F, 0.0F));
 
-		left_arm = new ModelRenderer(this);
-		left_arm.setRotationPoint(-3.0F, 17.0F, -3.0F);
-		left_arm.setTextureOffset(26, 28).addBox(4.5F, 2.0F, -3.0F, 2.0F, 5.0F, 2.0F, 0.0F, false);
+		PartDefinition body = partdefinition.addOrReplaceChild("body",
+				CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, 0.2268F, -11.4608F, 6.0F, 5.0F, 10.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.0F, 16.0F, 7.0F, -0.1309F, 0.0F, 0.0F));
 
-		right_arm = new ModelRenderer(this);
-		right_arm.setRotationPoint(3.0F, 17.0F, -3.0F);
-		right_arm.setTextureOffset(0, 0).addBox(-6.5F, 2.0F, -3.0F, 2.0F, 5.0F, 2.0F, 0.0F, false);
+		PartDefinition left_arm = partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(26, 28)
+				.addBox(4.5F, 2.0F, -3.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(-3.0F, 17.0F, -3.0F));
 
-		left_thigh = new ModelRenderer(this);
-		left_thigh.setRotationPoint(-3.0F, 16.0F, 2.5F);
-		setRotationAngle(left_thigh, -0.2618F, 0.0F, 0.0F);
-		left_thigh.setTextureOffset(24, 19).addBox(5.0F, 2.3813F, -0.8966F, 2.0F, 4.0F, 5.0F, 0.0F, false);
+		PartDefinition right_arm = partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create().texOffs(0, 0)
+				.addBox(-6.5F, 2.0F, -3.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(3.0F, 17.0F, -3.0F));
 
-		right_thigh = new ModelRenderer(this);
-		right_thigh.setRotationPoint(3.0F, 16.0F, 2.5F);
-		setRotationAngle(right_thigh, -0.2618F, 0.0F, 0.0F);
-		right_thigh.setTextureOffset(12, 24).addBox(-7.0F, 2.3813F, -0.8966F, 2.0F, 4.0F, 5.0F, 0.0F, false);
+		PartDefinition left_thigh = partdefinition.addOrReplaceChild("left_thigh",
+				CubeListBuilder.create().texOffs(24, 19).addBox(5.0F, 2.3813F, -0.8966F, 2.0F, 4.0F, 5.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(-3.0F, 16.0F, 2.5F, -0.2618F, 0.0F, 0.0F));
 
-		left_foot = new ModelRenderer(this);
-		left_foot.setRotationPoint(-3.0F, 14.5F, 4.2F);
-		left_foot.setTextureOffset(11, 16).addBox(5.0F, 8.5F, -5.7F, 2.0F, 1.0F, 7.0F, 0.0F, false);
+		PartDefinition right_thigh = partdefinition.addOrReplaceChild("right_thigh",
+				CubeListBuilder.create().texOffs(12, 24).addBox(-7.0F, 2.3813F, -0.8966F, 2.0F, 4.0F, 5.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(3.0F, 16.0F, 2.5F, -0.2618F, 0.0F, 0.0F));
 
-		right_foot = new ModelRenderer(this);
-		right_foot.setRotationPoint(3.0F, 14.5F, 4.2F);
-		right_foot.setTextureOffset(0, 15).addBox(-7.0F, 8.5F, -5.7F, 2.0F, 1.0F, 7.0F, 0.0F, false);
+		PartDefinition left_foot = partdefinition.addOrReplaceChild("left_foot", CubeListBuilder.create()
+				.texOffs(11, 16).addBox(5.0F, 8.5F, -5.7F, 2.0F, 1.0F, 7.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(-3.0F, 14.5F, 4.2F));
 
-		tail = new ModelRenderer(this);
-		tail.setRotationPoint(0.0F, 16.25F, 6.5F);
-		setRotationAngle(tail, -0.1309F, 0.0F, 0.0F);
-		tail.setTextureOffset(0, 23).addBox(-1.5F, -4.2732F, -1.4608F, 3.0F, 8.0F, 3.0F, 0.0F, false);
-		tail.setTextureOffset(28, 11).addBox(-1.5F, -4.2732F, 1.5392F, 3.0F, 3.0F, 4.0F, 0.0F, false);
+		PartDefinition right_foot = partdefinition.addOrReplaceChild("right_foot", CubeListBuilder.create()
+				.texOffs(0, 15).addBox(-7.0F, 8.5F, -5.7F, 2.0F, 1.0F, 7.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(3.0F, 14.5F, 4.2F));
+
+		PartDefinition tail = partdefinition.addOrReplaceChild("tail",
+				CubeListBuilder.create().texOffs(0, 23)
+						.addBox(-1.5F, -4.2732F, -1.4608F, 3.0F, 8.0F, 3.0F, new CubeDeformation(0.0F)).texOffs(28, 11)
+						.addBox(-1.5F, -4.2732F, 1.5392F, 3.0F, 3.0F, 4.0F, new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.0F, 16.25F, 6.5F, -0.1309F, 0.0F, 0.0F));
+
+		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
 
 	@Override
-	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red,
-			float green, float blue, float alpha) {
-		head.render(matrixStack, buffer, packedLight, packedOverlay);
-		nose.render(matrixStack, buffer, packedLight, packedOverlay);
-		left_ear.render(matrixStack, buffer, packedLight, packedOverlay);
-		right_ear.render(matrixStack, buffer, packedLight, packedOverlay);
-		body.render(matrixStack, buffer, packedLight, packedOverlay);
-		left_arm.render(matrixStack, buffer, packedLight, packedOverlay);
-		right_arm.render(matrixStack, buffer, packedLight, packedOverlay);
-		left_thigh.render(matrixStack, buffer, packedLight, packedOverlay);
-		right_thigh.render(matrixStack, buffer, packedLight, packedOverlay);
-		left_foot.render(matrixStack, buffer, packedLight, packedOverlay);
-		right_foot.render(matrixStack, buffer, packedLight, packedOverlay);
-		tail.render(matrixStack, buffer, packedLight, packedOverlay);
-	}
+	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
+			float headPitch) {
 
-	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-		modelRenderer.rotateAngleX = x;
-		modelRenderer.rotateAngleY = y;
-		modelRenderer.rotateAngleZ = z;
 	}
 
 	@Override
-	public void setRotationAngles(SquirrelEntity entity, float arg1, float arg2, float arg3, float arg4, float arg5) {
-
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay,
+			float red, float green, float blue, float alpha) {
+		head.render(poseStack, buffer, packedLight, packedOverlay);
+		nose.render(poseStack, buffer, packedLight, packedOverlay);
+		left_ear.render(poseStack, buffer, packedLight, packedOverlay);
+		right_ear.render(poseStack, buffer, packedLight, packedOverlay);
+		body.render(poseStack, buffer, packedLight, packedOverlay);
+		left_arm.render(poseStack, buffer, packedLight, packedOverlay);
+		right_arm.render(poseStack, buffer, packedLight, packedOverlay);
+		left_thigh.render(poseStack, buffer, packedLight, packedOverlay);
+		right_thigh.render(poseStack, buffer, packedLight, packedOverlay);
+		left_foot.render(poseStack, buffer, packedLight, packedOverlay);
+		right_foot.render(poseStack, buffer, packedLight, packedOverlay);
+		tail.render(poseStack, buffer, packedLight, packedOverlay);
 	}
 }
